@@ -16,3 +16,4 @@ echo "<br>";
 
 /* Test date formatter */
 echo formatDate("2026-02-15 14:30:00");
+?>
