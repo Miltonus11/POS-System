@@ -21,6 +21,12 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
     <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
     <a href="#" id="logoutLink">Logout</a>
     
+    <ul>
+        <li><a href="monitorTransactions.php">Monitor Transactions</a></li>
+        <li><a href="handleTransactions.php">Handle Transactions</a></li>
+        <li><a href="analytics.php">Analytics</a></li>
+    </ul>
+
 <script src="../../assets/js/logout.js"></script>
 </body>
 </html>
