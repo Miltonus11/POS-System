@@ -3,7 +3,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
 
     const formData = new FormData(this);
 
-    fetch("../../backend/api/auth.php?action=login", {
+    fetch("./backend/api/auth.php?action=login", {
         method: "POST",
         body: formData
     })
@@ -19,11 +19,11 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
                 // redirect based on user role
                 const role = data.role || '';
                 if(role === 'admin') {
-                    window.location.href = "../views/admin/admin-dashboard.php";
+                    window.location.href = "./frontend/views/admin/admin-dashboard.php";
                 } else if (role === 'manager') {
-                    window.location.href = "../views/manager/manager-dashboard.php";
+                    window.location.href = "./frontend/views/manager/manager-dashboard.php";
                 } else {
-                    window.location.href = "../views/index.php";
+                    window.location.href = "./index.php";
                 }
             }, 1000);
         } else {

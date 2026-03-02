@@ -2,12 +2,12 @@
 session_start();
 
 if(!isset($_SESSION['logged_in'])){
-    header("Location: ../views/index.php");
+    header("Location: ../../../index.php");
     exit();
 }
 // only managers allowed
 if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
-    header("Location: ../views/index.php");
+    header("Location: ../../../index.php");
     exit();
 }
 ?>
