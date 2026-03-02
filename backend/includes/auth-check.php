@@ -1,13 +1,14 @@
 <?php
+  // Start session
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+
+
   // Redirect to login if not authenticated
   if (!isset($_SESSION['user_id'])) {
     header('Location: /login.php');
     exit;
-  }
-
-  // Start session
-  if (session_status() == PHP_SESSION_NONE) {
-    session_start();
   }
 
   // logout the user if inactive for 30 min
@@ -16,7 +17,6 @@
   if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
     session_unset();
     session_destroy();
-
     header("Location: /login.php?timeout=1");
     exit;
   }
