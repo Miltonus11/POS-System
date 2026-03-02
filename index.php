@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="./frontend/assets/css/login.css">
 </head>
 <body>
 
@@ -18,6 +18,6 @@
     <div class="message" id="message"></div>
 </div>
 
-<script src="../assets/js/login.js"></script>
+<script src="./frontend/assets/js/login.js"></script>
 </body>
 </html>
