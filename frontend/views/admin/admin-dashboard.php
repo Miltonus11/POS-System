@@ -23,6 +23,10 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     
     <ul>
         <li><a href="userManagement.php">User Management</a></li>
+        <li><a href="analytics.php">Analytics</a></li>
+        <li><a href="handleTransactions.php">Handle Transactions</a></li>
+        <li><a href="monitorTransactions.php">Monitor Transactions</a></li>
+        <li><a href="inventory.php">Inventory</a></li>
     </ul>
 
 <script src="../../assets/js/logout.js"></script>
