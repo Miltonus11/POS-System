@@ -18,7 +18,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <html>
 <head>
     <title>User Management</title>
-    <link rel="stylesheet" href="../../assets/css/userManagement.css?v=1.3">
+    <link rel="stylesheet" href="../../assets/css/userManagement.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -27,11 +27,11 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <aside class="sidebar">
             <h2>QuickSale</h2>
             <nav>
-                <a href="userManagement.php" class="<?php if($currentPage == 'userManagement.php') echo 'active'; ?>"><i class="fas fa-users"></i> User Management</a>
-                <a href="analytics.php" class="<?php if($currentPage == 'analytics.php') echo 'active'; ?>"><i class="fas fa-chart-bar"></i> Analytics</a>
-                <a href="handleTransactions.php" class="<?php if($currentPage == 'handleTransactions.php') echo 'active'; ?>"><i class="fas fa-cash-register"></i> Handle Transactions</a>
-                <a href="monitorTransactions.php" class="<?php if($currentPage == 'monitorTransactions.php') echo 'active'; ?>"><i class="fas fa-eye"></i> Monitor Transactions</a>
-                <a href="inventory.php" class="<?php if($currentPage == 'inventory.php') echo 'active'; ?>"><i class="fas fa-box"></i> Inventory</a>
+                <a href="userManagement.php"><i class="fas fa-users"></i> User Management</a>
+                <a href="analytics.php"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="handleTransactions.php"><i class="fas fa-cash-register"></i> Handle Transactions</a>
+                <a href="monitorTransactions.php"><i class="fas fa-eye"></i> Monitor Transactions</a>
+                <a href="inventory.php"><i class="fas fa-box"></i> Inventory</a>
             </nav>
             <a href="#" id="logoutLink" class="logout-link"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a>
         </aside>
@@ -41,7 +41,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <div class="header-actions">
                     <div class="search-container">
                         <i class="fas fa-search search-icon"></i>
-                        <input type="text" placeholder="Search users..." class_="search-input">
+                        <input type="text" placeholder="Search users..." class="search-input">
                     </div>
                     <button class="add-user-btn"><i class="fas fa-plus"></i> Add User</button>
                 </div>
