@@ -10,6 +10,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header("Location: ../../../index.php");
     exit();
 }
+$currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!DOCTYPE html>
@@ -25,11 +26,11 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
         <aside class="sidebar">
             <h2>QuickSale</h2>
             <nav>
-                <a href="userManagement.php"><i class="fas fa-users"></i> User Management</a>
-                <a href="analytics.php"><i class="fas fa-chart-bar"></i> Analytics</a>
-                <a href="handleTransactions.php"><i class="fas fa-cash-register"></i> Handle Transactions</a>
-                <a href="monitorTransactions.php"><i class="fas fa-eye"></i> Monitor Transactions</a>
-                <a href="inventory.php"><i class="fas fa-box"></i> Inventory</a>
+                <a href="userManagement.php" class="<?php if($currentPage == 'userManagement.php') echo 'active'; ?>"><i class="fas fa-users"></i> User Management</a>
+                <a href="analytics.php" class="<?php if($currentPage == 'analytics.php') echo 'active'; ?>"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="handleTransactions.php" class="<?php if($currentPage == 'handleTransactions.php') echo 'active'; ?>"><i class="fas fa-cash-register"></i> Handle Transactions</a>
+                <a href="monitorTransactions.php" class="<?php if($currentPage == 'monitorTransactions.php') echo 'active'; ?>"><i class="fas fa-eye"></i> Monitor Transactions</a>
+                <a href="inventory.php" class="<?php if($currentPage == 'inventory.php') echo 'active'; ?>"><i class="fas fa-box"></i> Inventory</a>
             </nav>
             <a href="#" id="logoutLink" class="logout-link"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a>
         </aside>
