@@ -37,7 +37,13 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
         <main class="main-content">
             <div class="user-management-header">
                 <h1>User Management</h1>
-                <button class="add-user-btn"><i class="fas fa-plus"></i> Add User</button>
+                <div class="header-actions">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Search users..." class="search-input">
+                    </div>
+                    <button class="add-user-btn"><i class="fas fa-plus"></i> Add User</button>
+                </div>
             </div>
             <table>
                 <thead>
