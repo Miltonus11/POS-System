@@ -25,9 +25,9 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
         <aside class="sidebar">
             <h2>QuickSale</h2>
             <nav>
-                <a href="analytics.php"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="inventory.php"><i class="fas fa-box"></i> Inventory</a>
                 <a href="handleTransactions.php"><i class="fas fa-cash-register"></i> Handle Transactions</a>
-                <a href="monitorTransactions.php" class="active"><i class="fas fa-eye"></i> Monitor Transactions</a>
+                <a href="monitorTransactions.php"class="active"><i class="fas fa-eye"></i> Monitor Transactions</a>
             </nav>
             <a href="#" id="logoutLink" class="logout-link"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a>
         </aside>

@@ -5,8 +5,8 @@ if(!isset($_SESSION['logged_in'])){
     header("Location: ../../../index.php");
     exit();
 }
-// only admin may access
-if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
+// only manager may access
+if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
     header("Location: ../../../index.php");
     exit();
 }
@@ -28,16 +28,14 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
         <aside class="sidebar">
             <h2>QuickSale</h2>
             <nav>
-                <a href="userManagement.php"><i class="fas fa-users"></i> User Management</a>
-                <a href="analytics.php"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="inventory.php" class="active"><i class="fas fa-box"></i> Inventory</a>
                 <a href="handleTransactions.php"><i class="fas fa-cash-register"></i> Handle Transactions</a>
                 <a href="monitorTransactions.php"><i class="fas fa-eye"></i> Monitor Transactions</a>
-                <a href="inventory.php" class="active"><i class="fas fa-box"></i> Inventory</a>
             </nav>
             <a href="#" id="logoutLink" class="logout-link"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a>
         </aside>
         <main class="main-content">
-            <!-- Products View -->
+            <!--products view -->
             <div id="products-view">
                 <div class="inventory-header">
                     <h1>Inventory Management</h1>
@@ -70,7 +68,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
                 </div>
             </div>
 
-            <!-- Stock History View (Initially Hidden) -->
+            <!--stock history view(initially hidden) -->
             <div id="stock-history-view" style="display: none;">
                 <div class="inventory-header">
                     <h1>Stock History</h1>

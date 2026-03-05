@@ -3,11 +3,13 @@ body {
     margin: 0;
     background-color: #ecf0f1;
     color: #34495e;
+    overflow-x: auto;
 }
 
 .dashboard-container {
     display: flex;
     height: 100vh;
+    min-width: 1300px;
 }
 
 .sidebar {
@@ -17,6 +19,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0; 
 }
 
 .sidebar h2 {
@@ -42,7 +45,6 @@ body {
 
 .sidebar nav a i {
     margin-right: 15px;
-    
 }
 
 .logout-link {
@@ -57,32 +59,25 @@ body {
     transition: background-color 0.3s;
 }
 
-.logout-link:hover {
-    background-color: #c0392b;
-}
-
-.logout-link i {
-    margin-right: 10px;
-}
-
 .main-content {
     flex-grow: 1;
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+.welcome-message {
     text-align: center;
 }
 
-.main-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
+.welcome-message h1 {
+    font-size: 3em;
+    color: #34495e;
 }
 
-.main-content p {
+.welcome-message p {
     font-size: 1.5em;
     color: #7f8c8d;
 }
-
-
