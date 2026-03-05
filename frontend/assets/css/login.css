@@ -1,85 +1,61 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Nunito', sans-serif;
+    background-color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
+    margin: 0;
 }
 
 .login-box {
-    background: white;
-    width: 100%;
-    max-width: 400px; 
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
 }
 
 .login-box h2 {
-    margin-bottom: 25px;
-    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
 }
 
-.login-box input {
+.login-box input[type="text"],
+.login-box input[type="password"] {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+    border-color: #3498db;
+    outline: none;
 }
 
 .login-box button {
     width: 100%;
-    padding: 14px;
-    background: #007bff;
-    color: white;
+    padding: 15px;
     border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
+    background-color: #2c3e50;
+    color: white;
     font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .login-box button:hover {
-    background: #0056b3;
+    background-color: #46627f;
 }
 
 .message {
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-
-/* mobile enhancements */
-@media (max-width: 480px) {
-    body {
-        align-items: flex-start; 
-        padding-top: 60px;
-    }
-
-    .login-box {
-        max-width: 100%;
-        padding: 35px 25px;
-        border-radius: 16px;
-    }
-
-    .login-box h2 {
-        font-size: 26px;
-    }
-
-    .login-box input,
-    .login-box button {
-        padding: 16px;
-        font-size: 17px;
-    }
+    margin-top: 20px;
+    color: #e74c3c;
 }

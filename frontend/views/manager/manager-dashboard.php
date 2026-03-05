@@ -2,12 +2,12 @@
 session_start();
 
 if(!isset($_SESSION['logged_in'])){
-    header("Location: ../views/index.php");
+    header("Location: ../../../index.php");
     exit();
 }
-// only managers allowed
+// only manager may access
 if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
-    header("Location: ../views/index.php");
+    header("Location: ../../../index.php");
     exit();
 }
 ?>
@@ -15,18 +15,26 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager'){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/manager-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
-    <a href="#" id="logoutLink">Logout</a>
-    
-    <ul>
-        <li><a href="monitorTransactions.php">Monitor Transactions</a></li>
-        <li><a href="handleTransactions.php">Handle Transactions</a></li>
-        <li><a href="analytics.php">Analytics</a></li>
-    </ul>
-
-<script src="../../assets/js/logout.js"></script>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>QuickSale</h2>
+            <nav>
+                <a href="analytics.php"><i class="fas fa-chart-bar"></i> Analytics</a>
+                <a href="handleTransactions.php"><i class="fas fa-cash-register"></i> Handle Transactions</a>
+                <a href="monitorTransactions.php"><i class="fas fa-eye"></i> Monitor Transactions</a>
+            </nav>
+            <a href="#" id="logoutLink" class="logout-link"><i class="fas fa-arrow-right-from-bracket"></i> Logout</a>
+        </aside>
+        <main class="main-content">
+            <h1>Welcome, <?php echo $_SESSION['username']; ?>!</h1>
+        </main>
+    </div>
+    <script src="../../assets/js/logout.js"></script>
 </body>
 </html>

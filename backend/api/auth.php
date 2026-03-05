@@ -90,7 +90,13 @@
         $_SESSION['full_name'] = $account['full_name'];
         $_SESSION['role'] = $account['role'];
         $_SESSION['logged_in'] = true;
-        $_SESSION['last_activity'] = time();       
+        $_SESSION['last_activity'] = time();
+        
+        http_response_code(200);
+        echo json_encode([
+            'success' => true,
+            'role' => $account['role']
+        ]);
     } 
 
     function handleLogout(): void {
@@ -106,7 +112,7 @@
         }
 
         session_destroy();
-        header('Location: /index.php?logged_out=1');
+        header('Location: ../../index.php?logged_out=1');
         exit;
     }
 ?>
