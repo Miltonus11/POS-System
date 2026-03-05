@@ -90,13 +90,19 @@
         $_SESSION['full_name'] = $account['full_name'];
         $_SESSION['role'] = $account['role'];
         $_SESSION['logged_in'] = true;
-        $_SESSION['last_activity'] = time();
+        $_SESSION['last_activity'] = time();  
         
+        $update = $pdo->prepare("UPDATE users SET last_login = NOW() WHERE id = ?");
+        $update->execute([$account['id']]);
+
         http_response_code(200);
         echo json_encode([
-            'success' => true,
-            'role' => $account['role']
+            'success'  => true,
+            'message'  => 'Welcome ' . $account['full_name'],
+            'role'     => $account['role'],
+            'user_id'  => $account['id'],
         ]);
+        exit;
     } 
 
     function handleLogout(): void {
