@@ -44,6 +44,28 @@
 
     return $stmt->execute([$productId, $type, $quantity, $reference]);
   }
+  
+  // Barcode Generator
+  function generateBarcode($prefix = '8888') {
+    $timestamp = date('ymd');               // 6 digits: YYMMDD
+    $random = str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT); // 6 random digits
+    $raw = $prefix . $timestamp . $random; // 16 digits total
 
+    // EAN-13 style: trim to 12 digits, then calculate check digit
+    $code = substr($prefix . $timestamp . $random, 0, 12);
 
+    // Calculate check digit
+    $sum = 0;
+    for ($i = 0; $i < 12; $i++) {
+      $sum += $code[$i] * ($i % 2 === 0 ? 1 : 3);
+    }
+    $checkDigit = (10 - ($sum % 10)) % 10;
+
+    return $code . $checkDigit; // 13-digit barcode
+  }
+  // get current dates
+  function getCurrentDate() {
+    return date('Y-m-d H:i:s');
+  }
 ?>
+
