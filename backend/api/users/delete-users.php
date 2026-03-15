@@ -79,7 +79,8 @@
 
   // cannot delete the last admin
   if ($existingUser['role'] === 'admin') {
-    $adminCountStmt = $pdo->prepare("SELECT COUNT(*) as total FROm users WHERE role = 'admin') AND status = 'active'");
+    $adminCountStmt = $pdo->prepare("SELECT COUNT(*) as total FROM users WHERE role = 'admin' AND status = 'active'");
+    $adminCountStmt->execute();
     $adminCount = $adminCountStmt->fetch(PDO::FETCH_ASSOC);
     if ((int) $adminCount['total'] <= 1) {
       http_response_code(403);

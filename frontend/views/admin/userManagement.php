@@ -12,6 +12,12 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     exit();
 }
 $currentPage = basename($_SERVER['PHP_SELF']);
+
+//define the base path for the API
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'];
+$base_path = $protocol . "://" . $host . "/Test_project/backend/api";
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +27,10 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <link rel="stylesheet" href="../../assets/css/userManagement.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        //pass the base path to JavaScript
+        const apiBasePath = "<?php echo $base_path; ?>";
+    </script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -61,44 +71,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td><!-- Sample Data Pa Modify nalang po for Database -->
-                        <td>RPDgamer101</td>
-                        <td class="password-cell">
-                            <span>********</span>
-                            <i class="fas fa-eye-slash reveal-pass-icon"></i>
-                        </td>
-                        <td>Leon kennedy</td>
-                        <td>Admin</td>
-                        <td>Active</td>
-                        <td>2023-01-15</td>
-                        <td>2024-07-28</td>
-                        <td class="action-buttons">
-                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                            <button class="archive-btn"><i class="fas fa-archive"></i></button>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>2</td>
-                        <td>WhereiSlEon55</td>
-                        <td class="password-cell">
-                            <span>********</span>
-                            <i class="fas fa-eye-slash reveal-pass-icon"></i>
-                        </td>
-                        <td>Chris Redfield</td>
-                        <td>Manager</td>
-                        <td>Active</td>
-                        <td>2023-02-20</td>
-                        <td>2024-07-27</td>
-                        <td class="action-buttons">
-                            <button class="edit-btn"><i class="fas fa-edit"></i></button>
-                            <button class="archive-btn"><i class="fas fa-archive"></i></button>
-                        </td>
-                    </tr>
+                    <!--user data will be populated here by JavaScript -->
                 </tbody>
             </table>
         </main>
     </div>
     <script src="../../assets/js/logout.js"></script>
+    <script src="../../assets/js/userManagement.js"></script>
 </body>
 </html>

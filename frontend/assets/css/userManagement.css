@@ -59,6 +59,7 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 40px;
+    overflow: auto;
 }
 
 .user-management-header {
@@ -198,4 +199,128 @@ tbody tr:hover {
 
 .action-buttons button i {
     font-size: 16px;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#userForm .form-group {
+    margin-bottom: 20px;
+}
+
+#userForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+#userForm input[type="text"],
+#userForm input[type="password"],
+#userForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#userForm button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Custom Notification */
+.custom-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    z-index: 2000;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.custom-notification.success {
+    background-color: #27ae60;
+}
+
+.custom-notification.error {
+    background-color: #e74c3c;
+}
+
+/* Confirmation Dialog */
+.confirmation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.confirmation-buttons button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+}
+
+#confirmBtn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#cancelBtn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
 }
